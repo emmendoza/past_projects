@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>Marker animations with <code>setTimeout()</code></title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+#floating-panel {
+  position: absolute;
+  top: 75px;
+  left: 7%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+      #floating-panel {
+        margin-left: -52px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div id="floating-panel">
+      Emmanuel's College Fast Food Finder!<br>
+      <button id="drop" onclick="drop()">Drop Schools</button>
+      <button id="drop" onclick="dropRestaurants()">Drop Restaurants</button>
+      <button id="drop" onclick="center()">Return to Center</button><br>
+      <input id="pac-input" class="controls" type="text" size="60" placeholder="Search Box">
+     </div>
+    <div id="map"></div>
+        <script>
+
+// If you're adding a number of markers, you may want to drop them on the map
+// consecutively rather than all at once. This example shows how to use
+// window.setTimeout() to space your markers' animation.
+var test1 = '<center>Lets Find Some Food near<br>';
+var test2 = '<br>Select A Radius<br><button id="drop" onclick="drop()">1 Mile</button><br><button id="drop" onclick="drop()">2 Miles</button><br><button id="drop" onclick="drop()">5 Miles</button></center>';
+
+
+  var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+      '<div id="bodyContent">'+
+      '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+      'sandstone rock formation in the southern part of the '+
+      'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+      'south west of the nearest large town, Alice Springs; 450&#160;km '+
+      '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+      'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+      'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+      'Aboriginal people of the area. It has many springs, waterholes, '+
+      'rock caves and ancient paintings. Uluru is listed as a World '+
+      'Heritage Site.</p>'+
+      '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+      'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+      '(last visited June 22, 2009).</p>'+
+      '</div>'+
+      '</div>';
+
+var neighborhoods = [
+  {lat: 35.300697, lng: -120.660787},
+  {lat: 35.329118, lng: -120.740212},
+  {lat: 35.650222, lng: -120.670402},
+  {lat: 35.116100, lng: -120.578136},
+];
+
+var titles = [
+    "California Polytechnic State University",
+    "Cuesta College - San Luis Obispo Campus",
+    "Cuesta College - North County Campus",
+    "Cuesta College - South County Center"
+];
+
+var miles = [
+    8047,
+    8047,
+    8047,
+    8047
+];
+
+var labels = [
+    "C",
+    "C",
+    "N",
+    "S"
+];
+var circles = null;
+var infowindow = null;
+var markers = [];
+var map;
+
+var centerPoint = {lat: 35.2929826, lng: -120.7856102}
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 10,
+    center: centerPoint,
+    //mapTypeId: google.maps.MapTypeId.TERRAIN
+  });
+
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+
+
+  //SEarch Feature Start
+  var input = document.getElementById('pac-input');
+  var searchBox = new google.maps.places.SearchBox(input);
+    map.addListener('bounds_changed', function() {
+    searchBox.setBounds(map.getBounds());
+  });
+
+searchBox.addListener('places_changed', function() {
+    var places = searchBox.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+
+    // Clear out the old markers.
+    /*markers.forEach(function(marker) {
+      marker.setMap(null);
+          if(circles){
+      circles.setMap(null);
+    }
+
+    });*/
+    clearMarkers();
+
+    //markers = [];
+
+    // For each place, get the icon, name and location.
+    var bounds = new google.maps.LatLngBounds();
+    places.forEach(function(place) {
+      var icon = {
+        url: place.icon,
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25)
+
+      };
+
+      // Create a marker for each place.
+      markers.push(new google.maps.Marker({
+        map: map,
+        icon: icon,
+        title: place.name,
+        position: place.geometry.location
+      }));
+
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    map.fitBounds(bounds);
+    map.setZoom(16);
+  });
+//Search Feature End
+}
+
+
+function center() {
+  map.setCenter(centerPoint);
+  map.setZoom(10);
+}
+
+function drop() {
+  clearMarkers();
+  for (var i = 0; i < neighborhoods.length; i++) {
+    addMarkerWithTimeout(neighborhoods[i], i * 400, i);
+  }
+}
+
+function addMarkerWithTimeout(position, timeout, index) {
+  window.setTimeout(function() {
+    //Create New Narker
+    markers.push(new google.maps.Marker({
+      position: position,
+      map: map,
+      title: titles[ index ],
+      label: labels[ index ],
+      html: "test",
+      animation: google.maps.Animation.DROP
+    }));
+    //Create Circle
+    circles = new google.maps.Circle({
+      strokeColor: '#FF0000',
+      strokeOpacity: 0.8,
+      strokeWeight: 1,//2,
+      fillColor: '#FF0000',
+      fillOpacity: 0.01,//0.35,
+      map: map,
+      center: position,
+      radius: miles[ index ]
+    });
+
+    //Create InfoWindow
+  var infowindow = new google.maps.InfoWindow({
+    content: test1 + titles[ index ] + test2
+  });
+  //Create Listener for InfoWindow
+  markers[index].addListener('click', function() {
+    infowindow.open(map, this);
+  });
+
+  }, timeout);
+
+}
+
+//function addRestaurantWithTimeout(position, timeout, index) {
+function addRestaurantWithTimeout(lat, lng, title, street, cityStateZip, timeout, index) {
+  window.setTimeout(function() {
+    //Create New Narker
+    //console.log(position);
+    var x = {lat: lat, lng: lng};
+    //console.log("x = "+x.lat);
+    markers.push(new google.maps.Marker({
+      position: new google.maps.LatLng(lat, lng),
+      map: map,
+      title: title,
+      label: title,
+      html: "test",
+      animation: google.maps.Animation.DROP
+    }));
+    //Create Circle
+    /*
+    circles = new google.maps.Circle({
+      strokeColor: '#FF0000',
+      strokeOpacity: 0.8,
+      strokeWeight: 1,//2,
+      fillColor: '#FF0000',
+      fillOpacity: 0.01,//0.35,
+      map: map,
+      center: position,
+      radius: miles[ index ]
+    });*/
+
+    //Create InfoWindow
+  var infowindow = new google.maps.InfoWindow({
+    content: title + "<br>" + street +"<br>" + cityStateZip
+  });
+  //Create Listener for InfoWindow
+  markers[index].addListener('click', function() {
+    infowindow.open(map, this);
+  });
+
+  }, timeout);
+
+}
+
+function clearCircles(){
+
+}
+
+function clearMarkers() {
+  for (var i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
+
+    if(circles){
+      circles.setMap(null);
+    }
+  }
+  markers = [];
+}
+
+function drop() {
+  clearMarkers();
+  for (var i = 0; i < neighborhoods.length; i++) {
+    addMarkerWithTimeout(neighborhoods[i], i * 400, i);
+  }
+}
+
+function dropRestaurants() {
+  clearMarkers();
+  $.post( "findNear.php", { lng: "-120.740212", lat: "35.329118", rad: "5" })
+  .done(function( data ) {
+    if(data.results.status){
+      alert( "Error: " + data.results.msg );
+    }else{
+      //alert( "Data Loaded: " + data.results.length );
+      var max = data.results.length
+      var i;
+      //var text = "";
+      for(i=0; i<max; i++){
+        //text += data.results[i].title +", "+ data.results[i].street+", "+ data.results[i].city+", "+ data.results[i].state+"<br>";
+        addRestaurantWithTimeout(data.results[i].lat, data.results[i].lng, data.results[i].title, data.results[i].street, data.results[i].cityStateZip, i * 200, i);
+      }
+      //$("#dataDump").html( text );
+    }
+  }); 
+  //}
+}
+
+
+
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9w50w7aMqhmPQK8ukCVbTbLgnw7xkAus&signed_in=true&libraries=places&callback=initMap"></script>
+  </body>
+</html>

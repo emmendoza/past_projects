@@ -1,0 +1,25 @@
+db2 disconnect mysjsu
+db2 drop database mysjsu
+db2 create database mysjsu
+db2 connect to mysjsu
+db2 create table student ( sid INTEGER NOT NULL,name varchar(40), PRIMARY KEY (sid))
+db2 create table classestaken ( sid INTEGER,cid INTEGER)
+db2 create table course ( cid INTEGER NOT NULL,subject varchar(40), pRcid INTEGER, PRIMARY KEY (cid))
+db2 insert into student values(1, 'Adam Anderson')
+db2 insert into student values(2, 'Ben Bernard')
+db2 insert into student values(3, 'Catherine Clearwater')
+db2 insert into course values(1, 'Math 1', NULL)
+db2 insert into course values(2, 'Math 2', 1)
+db2 insert into course values(3, 'Math 3', 2)
+db2 insert into course values(4, 'Math 4', 3)
+db2 insert into course values(5, 'Physics 1', 2)
+db2 insert into course values(6, 'Physics 2', 5)
+db2 insert into classestaken values(1, 1)
+db2 insert into classestaken values(1, 2)
+db2 insert into classestaken values(1, 3)
+db2 insert into classestaken values(1, 5)
+db2 insert into classestaken values(2, 1)
+db2 insert into classestaken values(3, 1)
+db2 insert into classestaken values(3, 2)
+db2 insert into classestaken values(3, 5)
+db2 insert into classestaken values(3, 6)

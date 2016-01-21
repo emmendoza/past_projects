@@ -1,0 +1,90 @@
+Subject,Course Number,Course Name,Class,Section1,Section2,Days,StartTime,EndTime,Room,Instructor,Meeting Dates
+CS,40,Introduction to Computers,42793,01-SEM,Regular,TuTh,12:00 PM,1:15 PM,MacQuarrie Hall 225,Kathleen O'Brien,08/20/2015 - 12/08/2015
+CS,46A,Introduction to Java Programming,27351,01-LEC,Regular,TuTh,1:30 PM,2:45 PM,Yoshihiro Uchida Hall 124,Kathleen O'Brien,01/28/2016 - 05/16/2016
+CS,46A,Introduction to Java Programming,27360,11-LAB,Regular,Fr,8:00 AM,10:45 AM,MacQuarrie Hall 422,Kathleen O'Brien,01/28/2016 - 05/16/2016
+CS,46A,Introduction to Java Programming,27361,12-LAB,Regular,Fr,11:00 AM,1:45 PM,MacQuarrie Hall 422,Kathleen O'Brien,01/28/2016 - 05/16/2016
+CS,46A,Introduction to Java Programming,27362,13-LAB,Regular,Fr,2:00 PM,4:45 PM,MacQuarrie Hall 422,Kathleen O'Brien,01/28/2016 - 05/16/2016
+CS,46A,Introduction to Java Programming,27363,14-LAB,Regular,Th,5:00 PM,7:45 PM,MacQuarrie Hall 225,Kathleen O'Brien,01/28/2016 - 05/16/2016
+CS,46A,Introduction to Java Programming,27364,15-LAB,Regular,Fr,8:00 AM,10:45 AM,Science Building 311,Kathleen O'Brien,01/28/2016 - 05/16/2016
+CS,46A,Introduction to Java Programming,27365,16-LAB,Regular,Fr,11:00 AM,1:45 PM,Science Building 311,Kathleen O'Brien,01/28/2016 - 05/16/2016
+CS,46B,Introduction to Data Structures,27369,01-LEC,Regular,MoWe,3:00 PM,4:15 PM,Washington Square Hall 109,Staff,01/28/2016 - 05/16/2016
+CS,46B,Introduction to Data Structures,27392,11-LAB,Regular,Fr,8:00 AM,10:45 AM,MacQuarrie Hall 225,Staff,01/28/2016 - 05/16/2016
+CS,46B,Introduction to Data Structures,27393,12-LAB,Regular,Fr,11:00 AM,1:45 PM,MacQuarrie Hall 225,Staff,01/28/2016 - 05/16/2016
+CS,46B,Introduction to Data Structures,27394,13-LAB,Regular,Fr,2:00 PM,4:45 PM,MacQuarrie Hall 225,Staff,01/28/2016 - 05/16/2016
+CS,46B,Introduction to Data Structures,27395,14-LAB,Regular,Tu,5:00 PM,7:45 PM,MacQuarrie Hall 225,Staff,01/28/2016 - 05/16/2016
+CS,46B,Introduction to Data Structures,27396,15-LAB,Regular,Fr,8:00 AM,10:45 AM,Duncan Hall 450,Staff,01/28/2016 - 05/16/2016
+CS,46B,Introduction to Data Structures,27397,16-LAB,Regular,Fr,11:00 AM,1:45 PM,Duncan Hall 450,Staff,01/28/2016 - 05/16/2016
+CS,47,Introduction to Computer Systems,23843,01-SEM,Regular,TuTh,6:00 PM,7:15 PM,Duncan Hall 351,Kaushik Patra,01/28/2016 - 05/16/2016
+CS,47,Introduction to Computer Systems,23844,02-SEM,Regular,TuTh,7:30 PM,8:45 PM,MacQuarrie Hall 233,Kaushik Patra,01/28/2016 - 05/16/2016
+CS,49C,Programming in C,22877,01-SEM,Regular,TuTh,6:00 PM,7:15 PM,Science Building 311,Ronald Gutman,01/28/2016 - 05/16/2016
+CS,49C,Programming in C,24964,02-SEM,Regular,TuTh,7:30 PM,8:45 PM,Science Building 311,Ronald Gutman,01/28/2016 - 05/16/2016
+CS,49J,Programming in Java,21473,01-LEC,Regular,MoWe,12:00 PM,1:15 PM,MacQuarrie Hall 222,Cay Horstmann,01/28/2016 - 05/16/2016
+CS,100W,Technical Writing,20465,01-SEM,Regular,TuTh,9:00 AM,10:15 AM,Science Building 311,Debra Caires,01/28/2016 - 05/16/2016
+CS,100W,Technical Writing,20466,02-SEM,Regular,MoWe,10:30 AM,11:45 AM,Science Building 311,Debra Caires,01/28/2016 - 05/16/2016
+CS,100W,Technical Writing,22372,03-SEM,Regular,TuTh,10:30 AM,11:45 AM,Science Building 311,Debra Caires,01/28/2016 - 05/16/2016
+CS,100W,Technical Writing,26250,04-SEM,Regular,MoWe,12:00 PM,1:15 PM,Science Building 311,Francisco De La Calle,01/28/2016 - 05/16/2016
+CS,108,Introduction to Game Studies,28792,01-LEC,Regular,MoWe,6:00 PM,7:15 PM,Art Building 135,James Morgan,01/28/2016 - 05/16/2016
+CS,116B,Computer Graphics Algorithms,27418,01-SEM,Regular,MoWe,6:00 PM,7:15 PM,Duncan Hall 450,Robert Bruce,01/28/2016 - 05/16/2016
+CS,120A,"Electronics, Data Acquisition & Analysis",29266,02-SEM,Regular,We,1:30 PM,2:20 PM,Science Building 320,Staff,01/28/2016 - 05/16/2016
+CS,120A,"Electronics, Data Acquisition & Analysis",29267,12-LAB,Regular,Fr,1:30 PM,4:20 PM,Science Building 320,Staff,01/28/2016 - 05/16/2016
+CS,122,Advanced Programming with Perl,27423,01-SEM,Regular,TuTh,7:30 AM,8:45 AM,MacQuarrie Hall 233,Saroj Sabherwal,01/28/2016 - 05/16/2016
+CS,134,Computer Game Design and Programming,27424,01-SEM,Regular,MoWe,4:30 PM,5:45 PM,MacQuarrie Hall 422,Michael Finder,01/28/2016 - 05/16/2016
+CS,143C,Numerical Analysis and Scientific Computing,28592,01-SEM,Regular,MoWe,7:30 AM,8:45 AM,MacQuarrie Hall 234,Staff,01/28/2016 - 05/16/2016
+CS,146,Data Structures and Algorithms,27436,01-LEC,Regular,MoWe,9:00 AM,10:15 AM,MacQuarrie Hall 222,Faramarz Mortezaie,01/28/2016 - 05/16/2016
+CS,146,Data Structures and Algorithms,27437,02-LEC,Regular,MoWe,10:30 AM,11:45 AM,MacQuarrie Hall 222,Aikaterini Potika,01/28/2016 - 05/16/2016
+CS,146,Data Structures and Algorithms,27438,03-LEC,Regular,MoWe,3:00 PM,4:15 PM,MacQuarrie Hall 223,Saroj Sabherwal,01/28/2016 - 05/16/2016
+CS,146,Data Structures and Algorithms,27439,04-LEC,Regular,MoWe,4:30 PM,5:45 PM,MacQuarrie Hall 223,Saroj Sabherwal,01/28/2016 - 05/16/2016
+CS,146,Data Structures and Algorithms,27440,05-LEC,Regular,TuTh,6:00 PM,7:15 PM,MacQuarrie Hall 222,Anna Shaverdian,01/28/2016 - 05/16/2016
+CS,146,Data Structures and Algorithms,27441,06-LEC,Regular,TuTh,7:30 PM,8:45 PM,MacQuarrie Hall 222,Anna Shaverdian,01/28/2016 - 05/16/2016
+CS,146,Data Structures and Algorithms,27442,07-LEC,Regular,MoWe,7:30 AM,8:45 AM,MacQuarrie Hall 222,Faramarz Mortezaie,01/28/2016 - 05/16/2016
+CS,146,Data Structures and Algorithms,27443,08-LEC,Regular,MoWe,12:00 PM,1:15 PM,MacQuarrie Hall 225,Faramarz Mortezaie,01/28/2016 - 05/16/2016
+CS,147,Computer Architecture,25153,01-SEM,Regular,MoWe,6:00 PM,7:15 PM,Duncan Hall 250,Feiling Jia,01/28/2016 - 05/16/2016
+CS,149,Operating Systems,27450,01-SEM,Regular,MoWe,4:30 PM,5:45 PM,Duncan Hall 250,Kong Li,01/28/2016 - 05/16/2016
+CS,149,Operating Systems,27451,02-SEM,Regular,TuTh,7:30 AM,8:45 AM,Sweeney Hall 100,Ahmed Ezzat,01/28/2016 - 05/16/2016
+CS,149,Operating Systems,27452,03-SEM,Regular,TuTh,9:00 AM,10:15 AM,MacQuarrie Hall 233,Ahmed Ezzat,01/28/2016 - 05/16/2016
+CS,151,Object-Oriented Design,20194,01-SEM,Regular,TuTh,12:00 PM,1:15 PM,MacQuarrie Hall 233,Vidya Rangasayee,01/28/2016 - 05/16/2016
+CS,151,Object-Oriented Design,21448,02-SEM,Regular,MoWe,10:30 AM,11:45 AM,MacQuarrie Hall 223,Suneuy Kim,01/28/2016 - 05/16/2016
+CS,151,Object-Oriented Design,22772,03-SEM,Regular,MoWe,12:00 PM,1:15 PM,MacQuarrie Hall 223,Suneuy Kim,01/28/2016 - 05/16/2016
+CS,151,Object-Oriented Design,24972,04-SEM,Regular,TuTh,10:30 AM,11:45 AM,Sweeney Hall 100,Vidya Rangasayee,01/28/2016 - 05/16/2016
+CS,152,Programming Paradigms,27500,02-LEC,Regular,TuTh,8:00 PM,9:15 PM,MacQuarrie Hall 225,Ahmad Yazdankhah,01/28/2016 - 05/16/2016
+CS,152,Programming Paradigms,28485,03-LEC,Regular,TuTh,12:00 PM,1:15 PM,MacQuarrie Hall 222,Saroj Sabherwal,01/28/2016 - 05/16/2016
+CS,154,Formal Languages and Computability,27505,01-SEM,Regular,TuTh,1:30 PM,2:45 PM,Duncan Hall 250,Ron Mak,01/28/2016 - 05/16/2016
+CS,154,Formal Languages and Computability,27506,02-SEM,Regular,TuTh,4:30 PM,5:45 PM,MacQuarrie Hall 422,Ahmad Yazdankhah,01/28/2016 - 05/16/2016
+CS,154,Formal Languages and Computability,27507,03-SEM,Regular,TuTh,6:00 PM,7:15 PM,MacQuarrie Hall 422,Ahmad Yazdankhah,01/28/2016 - 05/16/2016
+CS,157B,Database Management Systems II,27512,01-SEM,Regular,TuTh,10:30 AM,11:45 AM,MacQuarrie Hall 223,Suneuy Kim,01/28/2016 - 05/16/2016
+CS,157B,Database Management Systems II,27514,03-SEM,Regular,TuTh,6:00 PM,7:15 PM,MacQuarrie Hall 233,Tsau-Young Lin,01/28/2016 - 05/16/2016
+CS,157B,Database Management Systems II,27515,04-SEM,Regular,TuTh,4:30 PM,5:45 PM,MacQuarrie Hall 223,Fain Butt,01/28/2016 - 05/16/2016
+CS,157B,Database Management Systems II,29221,05-SEM,Regular,Sa,10:00 AM,12:45 PM,MacQuarrie Hall 422,Fain Butt,01/28/2016 - 05/16/2016
+CS,158A,Computer Networks,23692,01-SEM,Regular,MoWe,7:30 AM,8:45 AM,MacQuarrie Hall 225,Juan Gomez,01/28/2016 - 05/16/2016
+CS,158A,Computer Networks,24974,02-SEM,Regular,TuTh,7:30 AM,8:45 AM,MacQuarrie Hall 222,Juan Gomez,01/28/2016 - 05/16/2016
+CS,159,Introduction to Parallel Processing,21475,01-SEM,Regular,MoWe,3:00 PM,4:15 PM,MacQuarrie Hall 222,Robert Chun,01/28/2016 - 05/16/2016
+CS,160,Software Engineering,22414,01-SEM,Regular,TuTh,9:00 AM,10:15 AM,MacQuarrie Hall 422,Ron Mak,01/28/2016 - 05/16/2016
+CS,160,Software Engineering,23820,02-SEM,Regular,TuTh,10:30 AM,11:45 AM,MacQuarrie Hall 422,Ron Mak,01/28/2016 - 05/16/2016
+CS,160,Software Engineering,25611,03-SEM,Regular,TuTh,6:00 PM,7:15 PM,MacQuarrie Hall 223,Fain Butt,01/28/2016 - 05/16/2016
+CS,160,Software Engineering,27331,04-SEM,Regular,TuTh,7:30 PM,8:45 PM,MacQuarrie Hall 223,Fain Butt,01/28/2016 - 05/16/2016
+CS,161,Software Project,23748,01-SEM,Regular,MoWe,4:30 PM,5:45 PM,Duncan Hall 450,Robert Bruce,01/28/2016 - 05/16/2016
+CS,166,Information Security,27517,01-LEC,Regular,TuTh,9:00 AM,10:15 AM,MacQuarrie Hall 225,Mark Stamp,01/28/2016 - 05/16/2016
+CS,166,Information Security,27518,02-LEC,Regular,MoWe,1:30 PM,2:45 PM,MacQuarrie Hall 225,Staff,01/28/2016 - 05/16/2016
+CS,166,Information Security,28443,03-LEC,Regular,TuTh,3:00 PM,4:15 PM,MacQuarrie Hall 235,Prakash Atawale,01/28/2016 - 05/16/2016
+CS,174,Server-side Web Programming,27519,01-SEM,Regular,MoWe,6:00 PM,7:15 PM,MacQuarrie Hall 225,Christopher Pollett,01/28/2016 - 05/16/2016
+CS,174,Server-side Web Programming,27520,02-SEM,Regular,MoWe,7:30 PM,8:45 PM,MacQuarrie Hall 225,Maria Dalarcao,01/28/2016 - 05/16/2016
+CS,180H,Individual Studies for Honors,20195,01-SEM,Regular,TBA,TBA,TBA,TBA,Staff,01/28/2016 - 05/16/2016
+CS,185C,Advanced Practical Computing Topics,22043,01-SEM,Regular,TuTh,1:30 PM,2:45 PM,MacQuarrie Hall 233,James Morgan,01/28/2016 - 05/16/2016
+CS,185C,Advanced Practical Computing Topics,29313,02-SEM,Regular,MoWe,3:00 PM,4:15 PM,MacQuarrie Hall 422,Staff,01/28/2016 - 05/16/2016
+CS,200W,Graduate Technical Writing,22426,01-LEC,Regular,MoWe,9:00 AM,10:15 AM,MacQuarrie Hall 225,Sharmin Khan,01/28/2016 - 05/16/2016
+CS,200W,Graduate Technical Writing,29408,02-LEC,Regular,MoWe,10:30 AM,11:45 AM,MacQuarrie Hall 422,Sharmin Khan,01/28/2016 - 05/16/2016
+CS,218,Topics in Cloud Computing,22844,01-LEC,Regular,MoWe,1:30 PM,2:45 PM,MacQuarrie Hall 422,Melody Moh,01/28/2016 - 05/16/2016
+CS,223,Bioinformatics,27521,01-SEM,Regular,TuTh,7:30 PM,8:45 PM,Duncan Hall 450,Leonard Wesley,01/28/2016 - 05/16/2016
+CS,251B,Object-Oriented Design,21481,01-SEM,Regular,TuTh,12:00 PM,1:15 PM,MacQuarrie Hall 422,Jon Pearce,01/28/2016 - 05/16/2016
+CS,252,Advanced Programming Language Principles,25192,01-SEM,Regular,MoWe,10:30 AM,11:45 AM,MacQuarrie Hall 225,Thomas Austin,01/28/2016 - 05/16/2016
+CS,255,Design and Analysis of Algorithms,20196,01-SEM,Regular,MoWe,1:30 PM,2:45 PM,MacQuarrie Hall 223,Aikaterini Potika,01/28/2016 - 05/16/2016
+CS,256,Topics in Artificial Intelligence,28282,01-SEM,Regular,TuTh,7:30 AM,8:45 AM,MacQuarrie Hall 223,Huan Tseng,01/28/2016 - 05/16/2016
+CS,259,Advanced Parallel Processing,25193,01-LEC,Regular,MoWe,6:00 PM,7:15 PM,MacQuarrie Hall 222,Robert Chun,01/28/2016 - 05/16/2016
+CS,265,Cryptography and Computer Security,20665,01-SEM,Regular,TuTh,10:30 AM,11:45 AM,MacQuarrie Hall 225,Mark Stamp,01/28/2016 - 05/16/2016
+CS,267,Topics in Database Systems,21482,01-SEM,Regular,MoWe,4:30 PM,5:45 PM,MacQuarrie Hall 225,Christopher Pollett,01/28/2016 - 05/16/2016
+CS,267,Topics in Database Systems,24984,02-SEM,Regular,TuTh,10:30 AM,11:45 AM,MacQuarrie Hall 233,Tsau-Young Lin,01/28/2016 - 05/16/2016
+CS,268,Topics in Wireless Mobile Networking,27522,01-LEC,Regular,MoWe,12:00 PM,1:15 PM,MacQuarrie Hall 422,Melody Moh,01/28/2016 - 05/16/2016
+CS,274,Topics in XML and Web Intelligence,21219,01-SEM,Regular,MoWe,7:30 PM,8:45 PM,MacQuarrie Hall 422,Teng-Sheng Moh,01/28/2016 - 05/16/2016
+CS,286,Advanced Topics in Computer Science,22270,01-SEM,Regular,MoWe,6:00 PM,7:15 PM,MacQuarrie Hall 223,Tsau-Young Lin,01/28/2016 - 05/16/2016
+CS,286,Advanced Topics in Computer Science,27341,02-SEM,Regular,TuTh,6:00 PM,7:15 PM,Duncan Hall 450,Leonard Wesley,01/28/2016 - 05/16/2016
+CS,286,Advanced Topics in Computer Science,27342,03-SEM,Regular,TuTh,7:30 PM,8:45 PM,MacQuarrie Hall 422,James Casaletto,01/28/2016 - 05/16/2016

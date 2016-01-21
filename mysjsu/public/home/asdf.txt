@@ -1,0 +1,22 @@
+$cities = array(
+
+"San Luis Obispo" => "1",
+"Paso Robles" => "1",
+"Pismo Beach" => "1",
+"Morro Bay" => "1",
+"Arroyo Grande" => "1",
+"Atascadero" => "1",
+"Avila Beach" => "1",
+"Grover Beach" => "1",
+"Los Osos, California" => "1",
+"San Simeon" => "1",
+"Santa Margarita" => "1",
+"Los Osos" => "1",
+"Creston" => "1",
+"Harmony" => "1",
+"Pozo" => "1",
+"Edna" => "1",
+"Cholame" => "1",
+"Halcyon" => "1",
+
+);

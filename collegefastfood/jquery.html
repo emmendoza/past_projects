@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script>
+
+function executeQuery() {
+  /*
+$.ajax({
+  method: "POST",
+  url: "findNear.php",
+  data: { lng: "-120.740212", lat: "35.329118", rad: "5" },
+})
+  .done(function( msg ) {
+  	console.log( msg );
+    alert( msg.results.msg );
+  });
+*/
+
+//$.post( "findNear.php", { lng: "-120.740212", lat: "35.329118", rad: "5" })
+$.post( "returnSchools.php")
+  .done(function( data ) {
+    console.log(data);
+    if(data.results.status){
+      alert( "Error: " + data.results.msg );
+    }else{
+      //alert( "Data Loaded: " + data.results.length );
+      var max = data.results.length
+      var i;
+      var text = "";
+      for(i=0; i<max; i++){
+        text += data.results[i].title1 +", "+ data.results[i].title2+", "+ data.results[i].lat+", "+ data.results[i].lng+"<br>";
+      }
+      $("#dataDump").html( text );
+    }
+  });
+    
+}
+
+</script>
+</head>
+<body>
+
+<button onclick="executeQuery()">Retrieve Data</button>
+<div id="dataDump"></div>
+
+
+</body>
+</html>

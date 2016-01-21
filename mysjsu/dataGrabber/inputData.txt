@@ -1,0 +1,22 @@
+Class	Section	Days & Times	Room	Instructor	Meeting Dates	Status	 	View Textbooks
+23002
+02-SEM
+Regular
+MoWe 1:30PM - 2:45PM
+MacQuarrie Hall 425
+Staff
+01/28/2016 - 05/16/2016
+Wait List
+select
+View Textbooks
+Class	Section	Days & Times	Room	Instructor	Meeting Dates	Status	 	View Textbooks
+28483
+03-SEM
+Regular
+MoWe 3:00PM - 4:15PM
+MacQuarrie Hall 425
+Staff
+01/28/2016 - 05/16/2016
+Open
+select
+View Textbooks

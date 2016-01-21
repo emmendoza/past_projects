@@ -1,0 +1,48 @@
+body {
+    /*padding-bottom: 200px;*/
+    padding-bottom:0 !important;
+}
+#main-content {
+    padding: 20px;
+    height: 320px;
+}
+.sjsu-container-prime {
+    background-color: #0055A2 !important;
+    border: none !important;
+}
+.sjsu-secondary {
+    color: #E5A823 !important;
+}
+.mysjsu-main-row {
+    /*padding-top: 30px;*/
+    min-height: 600px;
+}
+
+
+/*- FOOOOOOOTER  of login.blade.php-*/
+.footer {
+ position:absolute;
+   bottom:0;
+   width:100%;
+   /*height:60px;    Height of the footer */
+   background:#6cf;
+}
+
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
+         
+}
+.footer_1 {
+  margin-top: 50px;
+  padding: 15px;
+}
+.footer_1 a, .footer_1 h4, .footer_1 li{
+  color: white;
+}
+.footer_1 ul {
+  list-style-type: none !important;
+  padding: 0;
+}
+
+ 

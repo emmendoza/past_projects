@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>Emmanuel's College Fast Food Finder</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+#floating-panel {
+  position: absolute;
+  top: 75px;
+  left: 7%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+      #floating-panel {
+        margin-left: -52px;
+      }
+      #floating-panel2 {
+  position: absolute;
+  bottom: 30px;
+  left: 7%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  //text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+      #floating-panel2 {
+        margin-left: -52px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div id="floating-panel">
+      Emmanuel's College Fast Food Finder!<br>
+      <button id="drop" onclick="drop()">Drop Schools</button>
+      <!--<button id="drop" onclick="dropRestaurants()">Drop Restaurants</button>-->
+      <button id="drop" onclick="center()">Return to Center</button><br>
+      <input id="pac-input" class="controls" type="text" size="60" placeholder="Search Box">
+    </div>
+    <div id="floating-panel2">
+      <form>
+       <fieldset>
+        <legend>Legend</legend>
+        <table>
+          <tr>
+            <td><center>
+        <img src='http://maps.google.com/mapfiles/kml/pal2/icon10.png'></center></td><td> University/College</td></tr>
+        <tr><td><center><img src='http://labs.google.com/ridefinder/images/mm_20_blue.png'></td><td> Starbucks</td></tr>
+
+        <tr><td><center><img src='http://labs.google.com/ridefinder/images/mm_20_yellow.png'></center></td><td> McDonalds</td></tr>
+        <tr><td><center><img src='http://labs.google.com/ridefinder/images/mm_20_orange.png'></center></td><td> Burger King</td></tr>
+        <tr><td><center><img src='http://labs.google.com/ridefinder/images/mm_20_red.png'></center></td><td> Wendy's</td></tr>
+        <tr><td><center><img src='http://labs.google.com/ridefinder/images/mm_20_brown.png'></center></td><td> Arby's</td></tr>
+        <tr><td><center><img src='http://labs.google.com/ridefinder/images/mm_20_green.png'></center></td><td> Subway</td></tr>
+      </table>
+       </fieldset>
+      </form>
+     </div>
+    <div id="map"></div>
+        <script>
+
+// If you're adding a number of markers, you may want to drop them on the map
+// consecutively rather than all at once. This example shows how to use
+// window.setTimeout() to space your markers' animation.
+var test1 = '<center>Lets Find Some Food near<br>';
+var test2 = '<br>Select A Radius<br><button id="drop" onclick="drop()">1 Mile</button><br><button id="drop" onclick="drop()">2 Miles</button><br><button id="drop" onclick="drop()">5 Miles</button></center>';
+
+
+  var contentString = '';
+/*
+var neighborhoods = [
+  {lat: 35.300697, lng: -120.660787},
+  {lat: 35.329118, lng: -120.740212},
+  {lat: 35.650222, lng: -120.670402},
+  {lat: 35.116100, lng: -120.578136},
+];
+
+var titles = [
+    "California Polytechnic State University",
+    "Cuesta College - San Luis Obispo Campus",
+    "Cuesta College - North County Campus",
+    "Cuesta College - South County Center"
+];
+
+var miles = [
+    8047,
+    8047,
+    8047,
+    8047
+];
+
+var labels = [
+    "C",
+    "C",
+    "N",
+    "S"
+];*/
+var circles = null;
+var infowindow = null;
+var markers = [];
+var map;
+
+var centerPoint = {lat: 35.3929826, lng: -120.7856102}
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 10,
+    center: centerPoint,
+    //mapTypeId: google.maps.MapTypeId.TERRAIN
+  });
+
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+
+
+  //SEarch Feature Start
+  var input = document.getElementById('pac-input');
+  var searchBox = new google.maps.places.SearchBox(input);
+    map.addListener('bounds_changed', function() {
+    searchBox.setBounds(map.getBounds());
+  });
+
+searchBox.addListener('places_changed', function() {
+    var places = searchBox.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+
+    // Clear out the old markers.
+    /*markers.forEach(function(marker) {
+      marker.setMap(null);
+          if(circles){
+      circles.setMap(null);
+    }
+
+    });*/
+    clearMarkers();
+
+    //markers = [];
+
+    // For each place, get the icon, name and location.
+    var bounds = new google.maps.LatLngBounds();
+    places.forEach(function(place) {
+      var icon = {
+        url: place.icon,
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25)
+
+      };
+      var lat1 = place.geometry.location.lat();
+      var lng1 = place.geometry.location.lng();
+      //x = x.split(",",2);
+      //console.log("Address: "+ x +","+y);
+      // Create a marker for each place.
+      markers.push(new google.maps.Marker({
+        map: map,
+        icon: icon,
+        title: place.name,
+        position: place.geometry.location
+      }));
+          //START OF ADDED CODE
+          //Create InfoWindow
+          var infowindow = new google.maps.InfoWindow({
+            content: test1 + place.name + generateButtonHTML(lng1, lat1)
+          });
+          //Create Listener for InfoWindow
+          markers[0].addListener('click', function() {
+            infowindow.open(map, this);
+          });//END OF ADDED CODE
+
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    map.fitBounds(bounds);
+    map.setZoom(10);
+  });
+//Search Feature End
+}
+
+
+function center() {
+  map.setCenter(centerPoint);
+  map.setZoom(10);
+}
+
+function drop() {
+  clearMarkers();
+$.get( "returnSchools.php")
+  .done(function( data ) {
+    console.log(data);
+    if(data.results.status){
+      alert( "Error: " + data.results.msg );
+    }else{
+      //alert( "Data Loaded: " + data.results.length );
+      var max = data.results.length;
+      var i;
+
+      for(i=0; i<max; i++){
+        text = data.results[i].title1 +", "+ data.results[i].title2+", "+ data.results[i].lat+", "+ data.results[i].lng;
+
+        addMarkerWithTimeout(data.results[i].lat, data.results[i].lng, data.results[i].title1, data.results[i].title2, 400*i,i);
+      }
+
+    }
+  });
+
+}
+/*
+function drop() {
+  clearMarkers();
+  for (var i = 0; i < neighborhoods.length; i++) {
+    addMarkerWithTimeout(neighborhoods[i], i * 400, i);
+  }
+}*/
+
+function addMarkerWithTimeout(LAT, LNG, TITLE1, TITLE2, timeout, index) {
+  center();
+  window.setTimeout(function() {
+    //Create New Narker
+    console.log( index );
+    markers.push(new google.maps.Marker({
+      position: new google.maps.LatLng(LAT, LNG),
+      map: map,
+      title: TITLE1 +" "+ TITLE2,
+      //label: labels[ index ],
+      html: "test",
+      icon: 'http://maps.google.com/mapfiles/kml/pal2/icon10.png',
+      animation: google.maps.Animation.DROP
+    }));
+    //Create Circle
+
+
+    //Create InfoWindow
+  var infowindow = new google.maps.InfoWindow({
+    content: test1 + TITLE1 +" "+TITLE2+ generateButtonHTML(LNG, LAT)
+  });
+  //Create Listener for InfoWindow
+  markers[index].addListener('click', function() {
+    infowindow.open(map, this);
+  });
+
+  }, timeout);
+
+}
+/*
+function addMarkerWithTimeout(position, timeout, index) {
+  center();
+  window.setTimeout(function() {
+    //Create New Narker
+    console.log( position.lat );
+    markers.push(new google.maps.Marker({
+      position: position,
+      map: map,
+      title: titles[ index ],
+      //label: labels[ index ],
+      html: "test",
+      icon: 'http://maps.google.com/mapfiles/kml/pal2/icon10.png',
+      animation: google.maps.Animation.DROP
+    }));
+    //Create Circle
+
+
+    //Create InfoWindow
+  var infowindow = new google.maps.InfoWindow({
+    content: test1 + titles[ index ] + generateButtonHTML(position.lng, position.lat)
+  });
+  //Create Listener for InfoWindow
+  markers[index].addListener('click', function() {
+    infowindow.open(map, this);
+  });
+
+  }, timeout);
+
+}*/
+
+//function addRestaurantWithTimeout(position, timeout, index) {
+function addRestaurantWithTimeout(lat, lng, title, street, cityStateZip, timeout, index) {
+  window.setTimeout(function() {
+    //Create New Narker
+    //console.log(position);
+    var x = {lat: lat, lng: lng};
+    //console.log("x = "+x.lat);
+    markers.push(new google.maps.Marker({
+      position: new google.maps.LatLng(lat, lng),
+      map: map,
+      title: title,
+      //label: title.charAt(0),
+      icon: returnIcon(title.charAt(3)),
+      //html: "test",
+      animation: google.maps.Animation.DROP
+    }));
+    //Create Circle
+    /*
+    circles = new google.maps.Circle({
+      strokeColor: '#FF0000',
+      strokeOpacity: 0.8,
+      strokeWeight: 1,//2,
+      fillColor: '#FF0000',
+      fillOpacity: 0.01,//0.35,
+      map: map,
+      center: position,
+      radius: miles[ index ]
+    });*/
+
+    //Create InfoWindow
+  var infowindow = new google.maps.InfoWindow({
+    content: title + "<br>" + street +"<br>" + cityStateZip
+  });
+  //Create Listener for InfoWindow
+  markers[index].addListener('click', function() {
+    infowindow.open(map, this);
+  });
+
+  }, timeout);
+
+}
+
+function clearCircles(){
+
+}
+
+function generateButtonHTML(LNG, LAT){
+var coordinates = LNG + ','+LAT;
+var buttonHTML = '<br>Select A Radius<br><button id="drop" onclick="dropRestaurants('+coordinates+',1)">1 Mile</button><br><button id="drop" onclick="dropRestaurants('+coordinates+',2)">2 Miles</button><br><button id="drop" onclick="dropRestaurants('+coordinates+',5)">5 Miles</button></center>';
+//console.log( buttonHTML );
+return buttonHTML;
+}
+
+function clearMarkers() {
+
+    for (var i = 0; i < markers.length; i++) {
+      markers[i].setMap(null);
+
+      if(circles){
+        circles.setMap(null);
+      }
+    }
+
+  markers = [];
+}
+/*
+function drop() {
+  clearMarkers();
+  for (var i = 0; i < neighborhoods.length; i++) {
+    addMarkerWithTimeout(neighborhoods[i], i * 400, i);
+  }
+}*/
+function returnIcon(place){
+  var url = 'http://labs.google.com/ridefinder/images/mm_20_';
+  var type = '.png';
+  if( place == 'r'){//Starbucks
+    return url+'blue'+type;
+  }else if( place == 'o'){//McDonalds
+    return url+'yellow'+type;
+  }else if( place == 'g'){//Burger King
+    return url+'orange'+type;
+  }else if( place == 'd'){//Wendys
+    return url+'red'+type;
+  }else if( place == 'y'){//Arbys
+    return url+'brown'+type;
+  }else if( place == 'w'){//Subway
+    return url+'green'+type;
+  }
+  return 'http://labs.google.com/ridefinder/images/mm_20_white.png';
+}
+
+function dropRestaurants(LNG, LAT, RAD) {
+  clearMarkers();
+  //$.post( "findNear.php", { lng: "-120.740212", lat: "35.329118", rad: "5" })
+  $.post( "findNear.php", { lng: LNG, lat: LAT, rad: RAD })
+  .done(function( data ) {
+    if(data.results.status){
+      alert( "Error: " + data.results.msg );
+    }else{
+      //alert( "Data Loaded: " + data.results.length );
+      var max = data.results.length
+      var i;
+      //var text = "";
+      //ADDED CIRCLE
+          circles = new google.maps.Circle({
+            strokeColor: '#000000',
+            strokeOpacity: 0.8,
+            strokeWeight: 1,//2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.01,//0.35,
+            map: map,
+            center: new google.maps.LatLng(LAT, LNG),
+            radius: RAD * 1609
+          });//END OF CIRCLE
+          map.setCenter(new google.maps.LatLng(LAT, LNG));
+          if(RAD == 1){
+            map.setZoom(14);
+          }else if(RAD == 2){
+            map.setZoom(13);
+          }else if(RAD == 5){
+            map.setZoom(12);
+          }
+          
+      for(i=0; i<max; i++){
+        //text += data.results[i].title +", "+ data.results[i].street+", "+ data.results[i].city+", "+ data.results[i].state+"<br>";
+        addRestaurantWithTimeout(data.results[i].lat, data.results[i].lng, data.results[i].title, data.results[i].street, data.results[i].cityStateZip, i * 200, i);
+      }
+      if(max == 0)
+        alert( "No restaurants found within a "+RAD +" mile radius.");
+      //$("#dataDump").html( text );
+    }
+  }); 
+  //}
+}
+
+
+
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9w50w7aMqhmPQK8ukCVbTbLgnw7xkAus&signed_in=true&libraries=places&callback=initMap"></script>
+  </body>
+</html>

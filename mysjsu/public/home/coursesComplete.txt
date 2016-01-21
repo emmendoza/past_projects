@@ -1,0 +1,100 @@
+
+CS:100W:Technical Writing
+CS:108:Introduction to Game Studies
+CS:116B:Computer Graphics Algorithms
+CS:120A:Electronics, Data Acquisition & Analysis
+CS:122:Advanced Programming with Perl
+CS:134:Computer Game Design and Programming
+CS:143C:Numerical Analysis and Scientific Computing
+CS:146:Data Structures and Algorithms
+CS:147:Computer Architecture
+CS:149:Operating Systems
+CS:151:Object-Oriented Design
+CS:152:Programming Paradigms
+CS:154:Formal Languages and Computability
+CS:157B:Database Management Systems II
+CS:158A:Computer Networks
+CS:159:Introduction to Parallel Processing
+CS:160:Software Engineering
+CS:161:Software Project
+CS:166:Information Security
+CS:174:Server-side Web Programming
+CS:180H:Individual Studies for Honors
+CS:185C:Advanced Practical Computing Topics
+CS:200W:Graduate Technical Writing
+CS:218:Topics in Cloud Computing
+CS:223:Bioinformatics
+CS:251B:Object-Oriented Design
+CS:252:Advanced Programming Language Principles
+CS:255:Design and Analysis of Algorithms
+CS:256:Topics in Artificial Intelligence
+CS:259:Advanced Parallel Processing
+CS:265:Cryptography and Computer Security
+CS:267:Topics in Database Systems
+CS:268:Topics in Wireless Mobile Networking
+CS:274:Topics in XML and Web Intelligence
+CS:286:Advanced Topics in Computer Science
+CS:40:Introduction to Computers
+CS:46A:Introduction to Java Programming
+CS:46B:Introduction to Data Structures
+CS:47:Introduction to Computer Systems
+CS:49C:Programming in C
+CS:49J:Programming in Java
+MATH:10:Mathematics for General Education
+MATH:102:Secondary School Mathematics
+MATH:104:History of Mathematics
+MATH:105:Concepts in Mathematics, Probability and Statistics
+MATH:106:Intuitive Geometry
+MATH:108:Introduction to Abstract Mathematics and Proofs
+MATH:112:Vector Calculus
+MATH:12:Number Systems
+MATH:123:Differential Equations and Linear Algebra
+MATH:123W:Differential Equations and Linear Algebra Workshop
+MATH:126:Theory of Numbers
+MATH:128B:Abstract Algebra II
+MATH:129A:Linear Algebra I
+MATH:131A:Introduction to Analysis
+MATH:133A:Ordinary Differential Equations
+MATH:133B:Partial Differential Equations
+MATH:133W:Ordinary Differential Equations Workshop
+MATH:138:Complex Variables
+MATH:143C:Numerical Analysis and Scientific Computing
+MATH:15B:Statway B: Statistics-Concepts & Methods
+MATH:15C:Statway C: Statistics-Concepts & Methods
+MATH:15D:Statway Algebra Review Activity
+MATH:161A:Applied Probability and Statistics I
+MATH:161B:Applied Probability and Statistics II
+MATH:164:Mathematical Statistics
+MATH:178:Mathematical Modeling
+MATH:19:Precalculus
+MATH:19W:Precalculus Workshop
+MATH:201A:Mathematics for Secondary Teachers
+MATH:203:Applied Mathematics, Computation, and Statistics Projects
+MATH:221B:Higher Algebra II
+MATH:231A:Real Analysis
+MATH:243M:Numerical Linear Algebra
+MATH:261B:Design and Analysis of Experiments
+MATH:263:Stochastic Processes
+MATH:267:Computational Statistics
+MATH:269:Statistical Consulting
+MATH:279B:Advanced Graph Theory
+MATH:285:Advanced Topics in Mathematics
+MATH:297:Professional Development in College Teaching
+MATH:298I:Statistics Internship
+MATH:30:Calculus I
+MATH:30P:Calculus I with Precalculus
+MATH:30PL:Calculus I with Precalculus
+MATH:30W:Calculus I Workshop
+MATH:31:Calculus II
+MATH:31W:Calculus II Workshop
+MATH:32:Calculus III
+MATH:32W:Calcculus III Workshop
+MATH:3B:Intensive Learning Mathematics II
+MATH:42:Discrete Math
+MATH:42W:Discrete Math Workshop
+MATH:6B:Entry Level Mathematics II
+MATH:70:Finite Mathematics
+MATH:71:Calculus for Business and Aviation
+MATH:71W:Calculus Workshop for Business/Aviation
+MATH:8:College Algebra
+MATH:8W:College Algebra Workshop

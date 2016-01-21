@@ -1,0 +1,18 @@
+CS:116A:Introduction to Computer Graphics
+CS:123A:Bioinformatics I
+CS:155:Introduction to the Design and Analysis of Algorithms
+CS:156:Introduction to Artificial Intelligence
+CS:157A:Introduction to Database Management Systems
+CS:42:Introduction to Programming Concepts
+MATH:115:Modern Geometry and Transformations
+MATH:128A:Abstract Algebra I
+MATH:131B:Introduction to Real Variables
+MATH:133:Ordinary Differential Equations
+MATH:134:Ord. Diff. Eqns and Dynamical Systems
+MATH:163:Probability Theory
+MATH:221A:Higher Algebra I
+MATH:261A:Regression Theory and Methods
+MATH:279A:Graph Theory
+MATH:3A:Intensive Learning Mathematics I
+MATH:6A:Entry Level Mathematics I
+MATH:8W:College Algebra Workshop
